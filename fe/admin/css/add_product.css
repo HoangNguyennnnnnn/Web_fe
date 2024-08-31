@@ -1,0 +1,36 @@
+.form-control {
+    font-size: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+}
+
+.category-list {
+    display: flex;
+    justify-content: space-between;
+    /* Các mục sẽ được căn cách đều nhau trên dòng */
+    padding: 0;
+    /* Xóa padding mặc định của danh sách */
+}
+
+.category-item {
+    flex: 1;
+    /* Các mục chiếm hết không gian trên dòng ngang */
+    margin-right: 10px;
+    /* Khoảng cách giữa các mục */
+}
+
+.page-title {
+    font-size: 24px;
+    /* Kích thước font 24px */
+}
+
+label {
+    font-size: 16px;
+    /* Kích thước font 16px cho nhãn label */
+}

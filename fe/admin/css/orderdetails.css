@@ -1,0 +1,35 @@
+.category-list {
+    display: flex;
+    justify-content: space-between;
+    /* Các mục sẽ được căn cách đều nhau trên dòng */
+    padding: 0;
+    /* Xóa padding mặc định của danh sách */
+}
+
+.container {
+    margin-top: 50px;
+    max-width: 75%;
+}
+
+.card {
+    margin-bottom: 10px;
+    padding: auto;
+    font-size: 17px;
+}
+
+
+
+.category-item {
+    flex: 1;
+    /* Các mục chiếm hết không gian trên dòng ngang */
+    margin-right: 10px;
+    /* Khoảng cách giữa các mục */
+}
+
+.card-body {
+    font-size: 17px;
+}
+
+.float-end p span {
+    font-size: 17px;
+}

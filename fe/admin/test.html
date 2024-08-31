@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doanh thu</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div id="revenueData" style="display: none;">
+        <div id="dailyData" data-labels='["Ngày 1", "Ngày 2", "Ngày 3", "Ngày 4", "Ngày 5", "Ngày 6", "Ngày 7"]'
+            data-values='[100, 150, 200, 180, 220, 250, 300]'></div>
+        <div id="monthlyData"
+            data-labels='["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7"]'
+            data-values='[2000, 2500, 2800, 3000, 3200, 3500, 3800]'></div>
+        <div id="yearlyData" data-labels='["Năm 2020", "Năm 2021", "Năm 2022", "Năm 2023", "Năm 2024"]'
+            data-values='[25000, 30000, 35000, 40000, 45000]'></div>
+    </div>
+    <div>
+        <select id="selectPeriod">
+            <option value="daily">Ngày</option>
+            <option value="monthly">Tháng</option>
+            <option value="yearly">Năm</option>
+        </select>
+    </div>
+    <div>
+        <canvas id="revenueChart"></canvas>
+    </div>
+
+    <script>
+        // Lấy dữ liệu từ phần tử HTML
+        const revenueDataDiv = document.getElementById('revenueData');
+        const dailyData = JSON.parse(revenueDataDiv.querySelector('#dailyData').getAttribute('data-values'));
+        const monthlyData = JSON.parse(revenueDataDiv.querySelector('#monthlyData').getAttribute('data-values'));
+        const yearlyData = JSON.parse(revenueDataDiv.querySelector('#yearlyData').getAttribute('data-values'));
+
+        // Thiết lập biểu đồ mặc định
+        let currentData = dailyData;
+        let currentLabels = JSON.parse(revenueDataDiv.querySelector('#dailyData').getAttribute('data-labels'));
+
+        // Thiết lập biểu đồ
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: currentLabels,
+                datasets: [{
+                    label: 'Doanh thu',
+                    data: currentData,
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Lắng nghe sự kiện thay đổi lựa chọn
+        document.getElementById('selectPeriod').addEventListener('change', function () {
+            const selectedValue = this.value;
+            if (selectedValue === 'daily') {
+                currentData = dailyData;
+                currentLabels = JSON.parse(revenueDataDiv.querySelector('#dailyData').getAttribute('data-labels'));
+            } else if (selectedValue === 'monthly') {
+                currentData = monthlyData;
+                currentLabels = JSON.parse(revenueDataDiv.querySelector('#monthlyData').getAttribute('data-labels'));
+            } else if (selectedValue === 'yearly') {
+                currentData = yearlyData;
+                currentLabels = JSON.parse(revenueDataDiv.querySelector('#yearlyData').getAttribute('data-labels'));
+            }
+            revenueChart.data.labels = currentLabels;
+            revenueChart.data.datasets[0].data = currentData;
+            revenueChart.update();
+        });
+    </script>
+</body>
+
+</html>

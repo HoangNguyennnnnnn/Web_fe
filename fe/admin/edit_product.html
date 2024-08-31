@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Sản Phẩm Mới</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./css/add_product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="grid">
+            <nav class="header__navbar navbar-expand-sm">
+                <h1 class="name_shop">Angel&BB</h1>
+                <ul class="header__navbar-list" style="display: flex;">
+                    <ul class="category-list d-flex justify-content-between" style="list-style: none; border: none;">
+                        <li class="category-item">
+                            <a href="admin_display.html" class="category-item__link">Quản lý Sản phẩm</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="order.html" class="category-item__link">Quản lý Đơn hàng</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="user.html" class="category-item__link">Quản lý Người dùng</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">Thống kê và Báo cáo </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">Cài đặt</a>
+                        </li>
+                        <!-- Thêm các mục khác nếu cần -->
+                    </ul>
+                    <li class="header__navbar-item" id="nav_ac">
+                        <i class="fa-solid fa-user"></i>
+                        Admin
+                        <div class="nav-account" id="ac_menu">
+                            <ul class="account-list">
+                                <li class="account-item">
+                                    <a href="" class="account-link">Thông tin</a>
+                                </li>
+                                <li class="account-item">
+                                    <a href="index1.html" class="account-link">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container mt-5">
+        <div class="grid">
+            <h2 style="text-align: center;">Chỉnh sửa sản phẩm</h2>
+            <div class="grid__row mt-5">
+                <form id="productForm" enctype="multipart/form-data" class="mx-auto w-50 p-5">
+                    <div class="mb-3">
+                        <label for="categoryId" class="form-label">Giới tính:</label>
+                        <select class="form-select" id="exampleSelect" style="font-size: 16px;">
+                            <option value="1">Nam</option>
+                            <option value="2">Nữ</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoryId" class="form-label">Danh mục sản phẩm:</label>
+                        <select class="form-select" id="exampleSelect" style="font-size: 16px;">
+                            <option value="1">Quần </option>
+                            <option value="2">Áo</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Tiêu Đề:</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inboundPrice" class="form-label">Giá Nhập:</label>
+                        <input type="text" class="form-control" id="inboundPrice" name="inboundPrice" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="outboundPrice" class="form-label">Giá Bán:</label>
+                        <input type="text" class="form-control" id="outboundPrice" name="outboundPrice" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="discount" class="form-label">Giảm Giá:</label>
+                        <input type="text" class="form-control" id="discount" name="discount">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="supplierId" class="form-label">Nhà Cung Cấp:</label>
+                        <input type="text" class="form-control" id="supplierId" name="supplierId" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Số Lượng:</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoryId" class="form-label">Trạng thái</label>
+                        <select class="form-select" id="exampleSelect" style="font-size: 16px;">
+                            <option value="1">Hết hàng </option>
+                            <option value="2">Còn hàng </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imageUpload" class="form-label">Ảnh:</label>
+                        <input type="file" class="form-control" id="imageUpload" name="imageUpload" multiple
+                            onchange="previewImages(event)">
+                    </div>
+                    <!-- Hiển thị các hình ảnh đã chọn -->
+                    <div class="mb-3" id="previewImages"></div>
+
+                    <button type="button" class="btn btn-primary" style="font-size: 16px;"
+                        onclick="window.location.href='admin_display.html'">Lưu
+                        Sản Phẩm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link text-body-secondary" style="font-size: 14px;">Home</a>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link text-body-secondary" style="font-size: 14px;">Features</a>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link text-body-secondary" style="font-size: 14px;">Pricing</a>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link text-body-secondary" style="font-size: 14px;">FAQs</a>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link text-body-secondary" style="font-size: 14px;">About</a>
+            </li>
+        </ul>
+        <p class="text-center text-body-secondary">&copy; 2024 Company, Inc</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/add_product.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+:root {
+    --clr-primary: #7380ec;
+    --clr-danger: #ff7782;
+    --clr-success: #41f1b6;
+    --clr-white: #fff;
+    --clr-info-dark: #7d8da1;
+    --clr-info-light: #dce1eb;
+    --clr-dark: #363949;
+    --clr-warnig: #ff4edc;
+    --clr-light: rgba(132, 139, 200, 0.18);
+    --clr-primary-variant: #111e88;
+    --clr-dark-variant: #677483;
+    --clr-color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+    --box-shadow: 0rem 0rem 3rem var(--clr-light);
+}
+
+.container1 {
+    display: grid;
+    width: 96%;
+    gap: 1.8rem;
+    grid-template-columns: auto 40rem;
+    margin: 0 auto;
+}
+
+.main1 {
+    width: auto;
+}
+
+.content-table,
+.tableTSP {
+    border-collapse: collapse;
+    margin: 25px 0 0 0;
+    font-size: 0.9em;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-size: 13px;
+}
+
+.content-table thead tr {
+    background-color: #0759f190;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tr .img-tb1-name {
+    min-width: 350px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:hover {
+    font-weight: bold;
+    color: #0759f190;
+}
+
+.TopSellingProduct {
+    margin-left: 5px;
+    transition: all .3s ease;
+}
+
+.TopSellingProduct>h2 {
+    padding: auto;
+}
+
+.tableTSP thead tr {
+    background-color: #0759f190;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.tableTSP th,
+.tableTSP td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.tableTSP tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+/* .tableTSP tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+} */
+
+.tableTSP .imgTSP {
+    width: 50px;
+}
+
+.page1 {
+    font-size: 13px;
+    display: flex;
+}
+
+.page1 button {
+    background-color: var(--clr-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+    color: var(--clr-dark);
+    width: 25px;
+    height: 24.7px;
+    border: 0.2px;
+}
+
+.BieuDoDoanhThu {
+    background-color: var(--clr-white);
+    width: 100%;
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+    color: var(--clr-dark);
+    padding: 10px;
+    margin-bottom: 20px;
+}

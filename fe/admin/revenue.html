@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo doanh thu sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Báo cáo doanh thu sản phẩm</h2>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="dateType">Xem theo:</label>
+                <select class="form-select" id="dateType">
+                    <option value="day">Ngày</option>
+                    <option value="week">Tuần</option>
+                    <option value="month">Tháng</option>
+                </select>
+            </div>
+        </div>
+        <table class="table table-bordered mb-5" id="reportTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá vốn</th>
+                    <th>Giá bán</th>
+                    <th>Số lượng bán</th>
+                    <th>Doanh thu</th>
+                    <th>Lợi nhuận</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Sản phẩm A</td>
+                    <td class="costPrice">10000</td>
+                    <td class="sellingPrice">15000</td>
+                    <td class="quantitySold">100</td>
+                    <td class="revenue"></td>
+                    <td class="profit"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Sản phẩm B</td>
+                    <td class="costPrice">100000</td>
+                    <td class="sellingPrice">150000</td>
+                    <td class="quantitySold">130</td>
+                    <td class="revenue"></td>
+                    <td class="profit"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sản phẩm C</td>
+                    <td class="costPrice">20000</td>
+                    <td class="sellingPrice">35000</td>
+                    <td class="quantitySold">180</td>
+                    <td class="revenue"></td>
+                    <td class="profit"></td>
+                </tr>
+                <!-- Thêm các dòng khác tương tự cho các sản phẩm khác -->
+            </tbody>
+        </table>
+        <h2 class="text-center mb-4">Bảng Tổng hợp</h2>
+        <table class="table table-bordered" id="summaryTable">
+            <thead>
+                <tr>
+                    <th>Tổng số lượng sản phẩm bán ra</th>
+                    <th>Tổng giá trị sản phẩm bán ra</th>
+                    <th>Tổng doanh thu</th>
+                    <th>Lợi nhuận</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="totalProductsSold"></td>
+                    <td class="totalSalesValue"></td>
+                    <td class="totalRevenue"></td>
+                    <td class="totalProfit"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/revenue.js"></script>
+</body>
+
+</html>
